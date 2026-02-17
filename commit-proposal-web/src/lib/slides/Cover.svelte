@@ -4,7 +4,12 @@
 </script>
 
 <SlideTransition>
-    <div class="logo-box" in:fly={{ y: -50, duration: 800 }}>COMMIT API</div>
+    <img
+        src="/logo.png"
+        alt="Commit Logo"
+        class="logo"
+        in:fly={{ y: -50, duration: 800 }}
+    />
 
     <h1 class="title" in:fly={{ y: 50, duration: 800, delay: 200 }}>
         Strategic Growth Proposal
@@ -21,14 +26,11 @@
 </SlideTransition>
 
 <style>
-    .logo-box {
-        border: 4px solid var(--primary);
-        padding: 1rem 2rem;
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--primary);
-        margin-bottom: 3rem;
-        border-radius: 8px;
+    .logo {
+        width: 120px;
+        height: auto;
+        margin-bottom: 2rem;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
     }
 
     .title {
