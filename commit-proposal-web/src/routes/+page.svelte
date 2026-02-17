@@ -4,25 +4,13 @@
 
     import Cover from "$lib/slides/Cover.svelte";
     import ExecutiveSummary from "$lib/slides/ExecutiveSummary.svelte";
-    import SMMPipeline from "$lib/slides/SMMPipeline.svelte";
     import Deliverables from "$lib/slides/Deliverables.svelte";
-    import ContentStrategy from "$lib/slides/ContentStrategy.svelte";
-    import PerformanceMarketing from "$lib/slides/PerformanceMarketing.svelte";
     import Pricing from "$lib/slides/Pricing.svelte";
     import Closing from "$lib/slides/Closing.svelte";
 
     import "../app.css";
 
-    const slides = [
-        Cover,
-        ExecutiveSummary,
-        SMMPipeline,
-        Deliverables,
-        ContentStrategy,
-        PerformanceMarketing,
-        Pricing,
-        Closing,
-    ];
+    const slides = [Cover, ExecutiveSummary, Deliverables, Pricing, Closing];
 
     function handleKeydown(event) {
         if (event.key === "ArrowRight" || event.key === "Space") {

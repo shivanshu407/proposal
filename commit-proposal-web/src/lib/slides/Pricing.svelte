@@ -3,10 +3,10 @@
     import { fly, scale } from "svelte/transition";
 
     const items = [
-        { service: "Reddit UGC Seeding", price: 99 },
+        { service: "Reddit UGC Seeding", price: 49 },
         { service: "Instagram Social Media", price: 149 },
         { service: "UGC Video Ads (5 videos)", price: 149 },
-        { service: "Student Ambassador Program", price: 79 },
+        { service: "Student Ambassador Program", price: 129 },
         { service: "Performance Marketing (FB)", price: 99 },
         { service: "Influencer Collabs (2/wk)", price: 129 },
         { service: "AI UGC (American)", price: 69 },

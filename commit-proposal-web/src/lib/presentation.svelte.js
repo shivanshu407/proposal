@@ -25,4 +25,4 @@ export class PresentationState {
     }
 }
 
-export const presentation = new PresentationState(8); // 8 slides total
+export const presentation = new PresentationState(5); // 5 slides total
