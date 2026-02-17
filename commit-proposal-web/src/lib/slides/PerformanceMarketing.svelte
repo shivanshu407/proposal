@@ -1,19 +1,13 @@
 <script>
     import SlideTransition from "$lib/components/SlideTransition.svelte";
-    import { fade, blur } from "svelte/transition";
 </script>
 
 <SlideTransition>
     <h2 class="slide-title">Performance Marketing (US)</h2>
-    <p class="subtitle" in:fade>
-        Targeting: Gamers who lift, Crossfit, E-sports fans.
-    </p>
+    <p class="subtitle">Targeting: Gamers who lift, Crossfit, E-sports fans.</p>
 
     <div class="ads-container">
-        <div
-            class="ad-mockup"
-            in:blur={{ amount: 10, duration: 800, delay: 200 }}
-        >
+        <div class="ad-mockup anim-1">
             <div class="ad-header">Ad Copy A</div>
             <div class="ad-content">
                 <h5>Stop working out alone. Start competing.</h5>
@@ -25,10 +19,7 @@
             </div>
         </div>
 
-        <div
-            class="ad-mockup"
-            in:blur={{ amount: 10, duration: 800, delay: 400 }}
-        >
+        <div class="ad-mockup anim-2">
             <div class="ad-header">Ad Copy B</div>
             <div class="ad-content">
                 <h5>Your AI Coach is watching. And judging.</h5>
@@ -62,6 +53,23 @@
         border-radius: 16px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .anim-1 {
+        animation: slideUp 0.6s ease-out 0.3s forwards;
+    }
+
+    .anim-2 {
+        animation: slideUp 0.6s ease-out 0.5s forwards;
+    }
+
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .ad-header {
@@ -88,6 +96,7 @@
     p {
         color: var(--text-light);
         line-height: 1.6;
+        margin: 0;
     }
 
     .cta {
@@ -99,5 +108,10 @@
         font-weight: 700;
         text-transform: uppercase;
         cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .cta:hover {
+        background: var(--primary);
     }
 </style>
