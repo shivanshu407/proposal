@@ -1,16 +1,17 @@
 <script>
-    import { onMount } from 'svelte';
-    import { presentation } from '$lib/presentation.svelte.js';
-    
-    import Cover from '$lib/slides/Cover.svelte';
-    import ExecutiveSummary from '$lib/slides/ExecutiveSummary.svelte';
-    import SMMPipeline from '$lib/slides/SMMPipeline.svelte';
-    import Deliverables from '$lib/slides/Deliverables.svelte';
-    import ContentStrategy from '$lib/slides/ContentStrategy.svelte';
-    import PerformanceMarketing from '$lib/slides/PerformanceMarketing.svelte';
-    import Closing from '$lib/slides/Closing.svelte';
+    import { onMount } from "svelte";
+    import { presentation } from "$lib/presentation.svelte.js";
 
-    import '../app.css';
+    import Cover from "$lib/slides/Cover.svelte";
+    import ExecutiveSummary from "$lib/slides/ExecutiveSummary.svelte";
+    import SMMPipeline from "$lib/slides/SMMPipeline.svelte";
+    import Deliverables from "$lib/slides/Deliverables.svelte";
+    import ContentStrategy from "$lib/slides/ContentStrategy.svelte";
+    import PerformanceMarketing from "$lib/slides/PerformanceMarketing.svelte";
+    import Pricing from "$lib/slides/Pricing.svelte";
+    import Closing from "$lib/slides/Closing.svelte";
+
+    import "../app.css";
 
     const slides = [
         Cover,
@@ -19,13 +20,14 @@
         Deliverables,
         ContentStrategy,
         PerformanceMarketing,
-        Closing
+        Pricing,
+        Closing,
     ];
 
     function handleKeydown(event) {
-        if (event.key === 'ArrowRight' || event.key === 'Space') {
+        if (event.key === "ArrowRight" || event.key === "Space") {
             presentation.next();
-        } else if (event.key === 'ArrowLeft') {
+        } else if (event.key === "ArrowLeft") {
             presentation.prev();
         }
     }
@@ -43,9 +45,17 @@
     {/key}
 
     <div class="controls">
-        <button onclick={() => presentation.prev()} disabled={presentation.currentSlide === 0}>←</button>
-        <span class="slide-counter">{presentation.currentSlide + 1} / {slides.length}</span>
-        <button onclick={() => presentation.next()} disabled={presentation.currentSlide === slides.length - 1}>→</button>
+        <button
+            onclick={() => presentation.prev()}
+            disabled={presentation.currentSlide === 0}>←</button
+        >
+        <span class="slide-counter"
+            >{presentation.currentSlide + 1} / {slides.length}</span
+        >
+        <button
+            onclick={() => presentation.next()}
+            disabled={presentation.currentSlide === slides.length - 1}>→</button
+        >
     </div>
 </main>
 
@@ -53,7 +63,7 @@
     :global(body) {
         margin: 0;
         overflow: hidden;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         background: white;
         color: #333;
     }
@@ -76,7 +86,7 @@
         background: rgba(255, 255, 255, 0.9);
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     button {

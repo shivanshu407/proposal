@@ -4,75 +4,131 @@
 
     const deliverables = [
         {
-            platform: "TikTok / Reels",
-            count: "5 Videos / Month",
+            platform: "Reddit UGC Seeding",
+            detail: "5–10 profiles · 5–10 acquisitions/post",
+            color: "#FF4500",
+            delay: 100,
+        },
+        {
+            platform: "Instagram Social Media",
+            detail: "Brand positioning · Page outlook · 5 posts/mo",
             color: "#E1306C",
             delay: 200,
         },
         {
-            platform: "Reddit",
-            count: "5 Posts / Month",
-            color: "#FF4500",
+            platform: "UGC Video Ads",
+            detail: "5 UGC videos/mo for paid ads",
+            color: "#a500fd",
+            delay: 300,
+        },
+        {
+            platform: "Student Ambassador Program",
+            detail: "Nano-influencer network activation",
+            color: "#00b894",
             delay: 400,
         },
         {
-            platform: "LinkedIn",
-            count: "5 Posts / Month",
-            color: "#0077b5",
+            platform: "Performance Marketing",
+            detail: "Facebook & Instagram targeted ads",
+            color: "#1877F2",
+            delay: 500,
+        },
+        {
+            platform: "Influencer Collabs",
+            detail: "2 Instagram collabs per week",
+            color: "#fd79a8",
             delay: 600,
+        },
+        {
+            platform: "AI UGC Content",
+            detail: "American voice & style costings",
+            color: "#6c5ce7",
+            delay: 700,
+        },
+        {
+            platform: "TikTok Postings",
+            detail: "Trend-driven short-form content",
+            color: "#000000",
+            delay: 800,
+        },
+        {
+            platform: "LinkedIn Content",
+            detail: "Thought leadership & industry writing",
+            color: "#0077b5",
+            delay: 900,
         },
     ];
 </script>
 
 <SlideTransition>
-    <h2 class="slide-title">Monthly Deliverables</h2>
+    <h2 class="slide-title">Deliverables</h2>
+    <p class="sub">What you get — every single month.</p>
 
-    <div class="deliverables-container">
+    <div class="grid">
         {#each deliverables as item}
             <div
-                class="del-row"
-                style="background-color: {item.color}"
-                in:fly={{ x: 100, duration: 600, delay: item.delay }}
+                class="card"
+                style="border-left: 5px solid {item.color}"
+                in:fly={{ x: 60, duration: 400, delay: item.delay }}
             >
-                <div class="platform">{item.platform}</div>
-                <div class="count">{item.count}</div>
+                <span class="dot" style="background:{item.color}"></span>
+                <div>
+                    <h4>{item.platform}</h4>
+                    <p>{item.detail}</p>
+                </div>
             </div>
         {/each}
     </div>
 </SlideTransition>
 
 <style>
-    .deliverables-container {
+    .sub {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+        width: 90%;
+        max-width: 1200px;
+    }
+
+    .card {
+        background: white;
+        padding: 1.2rem 1.4rem;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        width: 80%;
-        max-width: 900px;
+        align-items: flex-start;
+        gap: 0.8rem;
+        transition: transform 0.25s;
     }
 
-    .del-row {
-        padding: 2rem 3rem;
-        border-radius: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s;
+    .card:hover {
+        transform: translateY(-4px);
     }
 
-    .del-row:hover {
-        transform: scale(1.02);
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 6px;
     }
 
-    .platform {
-        font-size: 2.2rem;
-        font-weight: 700;
+    h4 {
+        margin: 0 0 0.3rem;
+        font-size: 1rem;
+        color: var(--text-dark);
     }
 
-    .count {
-        font-size: 2.2rem;
-        font-weight: 400;
-        opacity: 0.95;
+    .card p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text-light);
+        line-height: 1.4;
     }
 </style>
